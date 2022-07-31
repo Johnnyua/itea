@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="main-section">
+        <h3>Language of Programming:</h3>
+        <ul id="unsort-programlg-list" class="programlg-list">
+            <li class="programlg-item">Java Script</li>
+            <li class="programlg-item">PHP</li>
+            <li class="programlg-item">Java</li>
+            <li class="programlg-item">.Net</li>
+            <li class="programlg-item">C++</li>
+        </ul>
+
+        <p id="result"></p> 
+          
+        <section class="button-list-section">
+            <fieldset>
+                <legend>Select items</legend>
+                <button id="bt-first-elem" class="button-list" onclick="selectFirstElement()">Select first element</button>
+                <button id="bt-last-elem" class="button-list" onclick="selectLastElement()">Select last element</button>
+                <button id="bt-next-elem" class="button-list" onclick="selectNextElement()">Select next element</button>
+                <button id="bt-previous-elem" class="button-list" onclick="selectPreviousElement()">Select previous element</button>
+            </fieldset>
+            
+            <fieldset> 
+                <legend>Add items</legend>
+                <label for="add-element">Add element to lists:</label>
+                <input type="text" name="add-element" id="add-element" required>
+                <button id="bt-add-elem" class="button-list" onclick="addElement()">Add element</button>
+                <button id="bt-addtop-elem" class="button-list" onclick="addTopElement()">Add to top</button>
+            </fieldset>
+            <fieldset>
+                <legend>Delete items</legend> 
+                <label for="delete-element">Delete choosing element from list:</label>
+                <select id="delete-element" name="delete-element" ></select>
+                <button id="bt-delete-elem" class="button-list" onclick="deleteElement()">Delete element</button>
+            </fieldset>
+        </section>
+    </section>
+    <script src="./script/index.js"></script>
+</body>
+</html>
