@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+
+        div {
+            border: 1px solid red;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        div[onclick] {
+            cursor: pointer;
+            border-color: blue;
+        }
+
+        div {
+            animation: divadded 3s linear 1;
+        }
+
+        @keyframes divadded {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">one</div>
+
+    <script>
+        // Добавьте после дива с id=one еще один див с текстом two и id=two
+        // На клик по id=two добавьте перед ним див с id - two_first, а див с id=two измените на two_second 
+        const idOne = document.querySelector('#one');
+
+        (function () {
+            const idTwo = idOne.cloneNode();
+            idTwo.id = 'two';
+            idTwo.innerText = 'two';
+            idTwo.setAttribute('onclick', 'addElement();');
+            idOne.insertAdjacentHTML("afterEnd", idTwo.outerHTML);
+
+        })();
+
+        function addElement() {
+            const idTwo = document.querySelector('#two');
+            const twoFirst = idTwo.cloneNode();
+
+            twoFirst.id = 'two_first';
+            twoFirst.innerText = 'two first';
+            twoFirst.removeAttribute('onclick');
+
+            idTwo.id = 'two_second';
+            idTwo.innerText = 'two second'
+            idTwo.removeAttribute('onclick');
+
+            idTwo.insertAdjacentHTML("beforeBegin", twoFirst.outerHTML);
+        }
+    </script>
+</body>
+
+</html>
