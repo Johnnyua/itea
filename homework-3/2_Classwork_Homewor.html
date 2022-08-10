@@ -1,0 +1,44 @@
+<!-- 
+    Запросите у пользователя ввести какую-то фразу. 
+    Отобразите каждое отдельное слово в виде списка ul li. 
+    Также отобразите первое слово UPPERCASE, а последние 2 с маленькой. 
+    Найдите все буквы "а" их количество в модальное окно. 
+ -->
+ 
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <title>Homework</title>
+</head>
+<body>
+    <div class="container" style="max-width: 300px">
+        <div class="container-fluid p-5">
+            <div class="mx-auto p-5">
+                <div id="value" class="fs-1 fw-bold"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal show" tabindex="-1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Найдите все буквы "а" их количество в модальное окно</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script/index_2.js"></script>
+</body>
+</html>
