@@ -12,8 +12,6 @@ const modalText = document.querySelector(".modal-body");
 const btnModalClose = document.querySelectorAll(".btn-close");
 const value = document.querySelector("#value");
 
-//modal.style.display = 'block';
-
 (function createList() {
     if (phrase === null) {
         value.innerHTML = 'Enter any phrase or confirm default';    
