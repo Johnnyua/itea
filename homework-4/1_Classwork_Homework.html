@@ -1,0 +1,38 @@
+<!-- Напишите регулярные выражения, которые будут выбирать 
+    индекс - 55535 - 5 numbers
+    ip адресс, пример 255.255.255.255
+    цены в долларах - $0.84, $1232.84, $4
+    дата в виде - 30/12/2016 - день, месяц, год
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  Lorem ipsum dolor sit amet 55555 consectetur adipisicing elit. Fuga deserunt 48961 rerum atque vero soluta error illo,
+  mollitia hic necessitatibus harum 33125 ipsam veniam! Placeat cumque tempore voluptatibus velit quo quasi dolores.
+  <script type="text/javascript">
+    let pattern = /\b\d{5}\b/g;
+    let text = " 25648 5553569 1254ef 55535 123";
+    document.write("<h4>Индекс</h4><br />" + text + " -> " + text.match(pattern) + "<br />");
+
+    pattern = /\$\d+(\.\d\d)?/g;
+    text = "$100 $99.9999 $0.84 $1232.84 500.99 грн 101.67грн 50 $1232.8454 $4";
+    document.write("<h4>цены в долларах</h4><br />" + text + " -> " + text.match(pattern) + "<br />");
+
+    pattern = /([0-9]{1,3}[\.]){3}[0-9]{1,3}/g;
+    text = "0 qaz 132534.4365.43 255.255.255.255 128.0.0.1 12.1.123.234.5 0.0.0.0";
+    document.write("<h4>ip адресс</h4><br />" + text + " -> " + text.match(pattern) + "<br />");
+
+    pattern = /(\b0[1-9]|[12]\d|3[0-1]\b)\/(0[0-9]|1[0-2])\/\d{4}/g;
+    text = "301/12/2016 09/03/2022 31/12/2016 01/15/2016 01/05/2016 40/05/2016";
+    document.write("<h4>дата в виде</h4><br />" + text + " -> " + text.match(pattern) + "<br />");
+
+  </script>
+</body>
+
+</html>

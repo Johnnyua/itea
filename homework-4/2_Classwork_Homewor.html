@@ -1,0 +1,72 @@
+<!-- Доработайте пример, 005_thisExample.html, при наведении мыши к одному из блоков, цвет блока должен измениться, на уникальный, такой которого еще нету у существующих блоков.
+Также выведите в блок текстовое оповещение о информации цвета, который используется для фона данного блока.
+При попытке закрыть вкладку, придупредите пользователя о том что информация будет утеряна. Используйте window.onload.  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ключевое слово this</title>
+    <style>
+        div {
+            background-color: #008000;
+            display: inline-block;
+            height: 100px;
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var divArr = document.getElementsByTagName("div");
+        let isColorExist = false;
+
+        for (var i = 0; i < divArr.length; i++) {
+            divArr[i].onmouseenter = function () {
+                let newBgRGBColor = '';
+                
+                do {
+                    newBgRGBColor = generateColor();
+                    isColorExist = checkColor(newBgRGBColor);
+                } while (isColorExist)
+                this.style.backgroundColor = newBgRGBColor;
+                this.innerHTML = newBgRGBColor;
+            }
+        }
+
+        function generateColor() {
+            maxVal = 0xFFFFFF;
+            const randomBgHexColor = Math.floor(Math.random() * maxVal).toString(16);
+            const BgRGBColor = convertToRGB(randomBgHexColor);
+            return BgRGBColor;
+        }
+
+        function checkColor(bgColor) {
+            for (let i = 0; i < divArr.length; i++) {
+                if (getComputedStyle(divArr[i]).backgroundColor === bgColor) {
+                    return true; 
+                }
+            } 
+            return false;   
+        }
+
+        function convertToRGB(hexColor) {
+            const hexArr = hexColor.match(/.{1,2}/g);
+            const rgbColor = hexArr.map(item => {return parseInt(item, 16)}).join(',');
+            return 'rgb(' + rgbColor + ')';
+        }
+
+        window.onbeforeunload = function () { 
+                return "Information will be lost? Are you sure?";
+            };
+    </script>
+
+</body>
+
+</html>
