@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Homework</title>    
+</head>
+<body>
+    <!--
+    1. Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+    Используйте только один обработчик.
+
+    2. Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы,
+    подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+
+    <div class="container">
+        <div class="container-fluid p-3 border mb-2">
+            <h3>Block 1</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero porro quos esse, corporis perspiciatis totam
+                eius illo
+                similique asperiores consequatur mollitia tempore laborum libero exercitationem odio commodi ratione
+                quisquam obcaecati.</p>
+            <button id="removeBlock" type="button" class="btn btn-danger btn-sm">
+                Remove
+            </button>
+        </div>
+        <div class="container-fluid p-3 border mb-2">
+            <h3>Block 2</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero porro quos esse, corporis perspiciatis totam
+                eius illo
+                similique asperiores consequatur mollitia tempore laborum libero exercitationem odio commodi ratione
+                quisquam obcaecati.</p>
+            <button id="removeBlock" type="button" class="btn btn-danger btn-sm">
+                Remove
+            </button>
+        </div>
+        <div class="container-fluid p-3 border mb-2">
+            <h3>Block 3</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero porro quos esse, corporis perspiciatis totam
+                eius illo
+                similique asperiores consequatur mollitia tempore laborum libero exercitationem odio commodi ratione
+                quisquam obcaecati.</p>
+            <button id="removeBlock" type="button" class="btn btn-danger btn-sm ">
+                Remove
+            </button>
+        </div>
+        <div class="container-fluid p-3 border mb-2">
+            <h3>Block 4</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero porro quos esse, corporis perspiciatis totam
+                eius illo
+                similique asperiores consequatur mollitia tempore laborum libero exercitationem odio commodi ratione
+                quisquam obcaecati.</p>
+            <button id="removeBlock" type="button" class="btn btn-danger btn-sm">
+                Remove
+            </button>
+        </div>
+        <div class="container-fluid p-3 border mb-2">
+            <h3>Block 5</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero porro quos esse, corporis perspiciatis totam
+                eius illo
+                similique asperiores consequatur mollitia tempore laborum libero exercitationem odio commodi ratione
+                quisquam obcaecati.</p>
+            <button id="removeBlock" type="button" class="btn btn-danger btn-sm">
+                Remove
+            </button>
+        </div>
+    </div>
+    <div id="main-div">
+        <span data-tooltip="наведите">наведите</span>
+        <span data-tooltip="для">для</span>
+        <span data-tooltip="подсказки">подсказки</span>
+    </div>
+    <script src="./script/index_2.js"></script>
+</body>
+</html>

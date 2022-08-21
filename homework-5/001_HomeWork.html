@@ -1,0 +1,28 @@
+<!--
+Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт.
+При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны пропасть.
+Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <style>
+            .container div {
+                display: none;
+                margin: 10px;
+            }
+            .container div.active {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a id="link" href="https://itea.ua">ITEA</a>
+            <div id="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, qui.</div>
+            <button id="reset">Reset link event</button>
+        </div>
+        <script src="./script/index.js"></script>
+    </body>
+</html>
