@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Пример проверки достоверности ввода</title>
+    <script type="text/javascript" src="script/Validate.js"></script>
+    <style type="text/css">
+        input.invalid {
+            background-color: Pink;
+        }
+
+        input.valid {
+            background-color: LightGreen;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+            Name:
+        <input type="text" name="userName" pattern = "\S" title="Not a space"/><br />
+            email:
+        <input type="text" name="email" pattern = "\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b" data-flag = "i"><br />
+            zipcode:
+        <input type="text" name="zip" pattern = "\d{5}" title="5 digits"/><br />
+        <input type="submit" />
+    </form>
+</body>
+</html>

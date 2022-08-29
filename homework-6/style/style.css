@@ -1,0 +1,19 @@
+.container{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+}
+.block {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: absolute;
+}
+
+#btn {
+    display: none;
+}
+
+#btn.active {
+    display: inline-block;
+}
