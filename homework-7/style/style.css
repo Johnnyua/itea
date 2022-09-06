@@ -1,0 +1,8 @@
+.container {
+    max-width: 550px;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+}
