@@ -2,8 +2,10 @@ window.addEventListener("load", async (e) => {
   await getCharacterByFilter(e, currentPage);
 });
 
-// const findBtn = document.querySelector(".btn-find-сharacters");
-const characterContainerList = document.querySelector(".сharacter-container-list");
+// const findBtn = document.querySelector('.btn-find-сharacters');
+const characterContainerList = document.querySelector(
+  ".сharacter-container-list"
+);
 const characterContainer = document.querySelector(".сharacter-container");
 const characterSection = document.querySelector(".content-section");
 const loader = document.querySelector(".loader");
@@ -24,24 +26,19 @@ async function getCharacters(url = "", additionalParam = "") {
 }
 
 async function getCharacterByFilter(e, curPage) {
-  // currentPage = Number(e.target.innerText) || currentPage;
   currentPage = curPage;
   const searchParam = currentPage === 1 ? "" : `?page=${currentPage}`;
-  // const paginationNumbers = document.querySelector('.pagination-numbers-container');
-  // paginationNumbers.innerHTML = "";
   characterContainerList.replaceChildren();
-  // const сharacterNodes = [];
   const сharacterNameInput = document.querySelector(".сharacter-input");
   loader.style.display = "block";
 
   const url = "https://swapi.dev/api/people/";
   const characters = await getCharacters(url + searchParam);
-  if (characters.name === 'Error') {
+  if (characters.name === "Error") {
     loader.style.display = "none";
     return (characterContainer.innerHTML = characters.message);
-  };
+  }
   console.log(characters);
-  // fillSelectValueOfCharId(characters.count);
   maxPage = Math.ceil(characters.count / 10);
   loader.style.display = "none";
   const charUrl = characters.url;
@@ -53,10 +50,6 @@ async function getCharacterByFilter(e, curPage) {
   createPagination(currentPage, maxPage);
   loader.style.display = "none";
 }
-
-// findBtn.addEventListener("click", (e) => {
-//   getCharacterByFilter(e, charSelectId.value);
-// });
 
 function createCharacters(results) {
   const charactersList = document.createElement("ul");
@@ -155,9 +148,9 @@ async function createCharacterInfo(obj) {
 
   charBackBtn.innerHTML = "Back";
   const existChar = JSON.parse(sessionStorage.getItem(obj.name));
- 
+
   if (existChar) {
-     existChar ? (obj = existChar) : obj;
+    existChar ? (obj = existChar) : obj;
   } else {
     const charPlanet = await getCharacters(obj.homeworld);
     obj.homeworld = charPlanet.name;
@@ -170,9 +163,9 @@ async function createCharacterInfo(obj) {
         return charFilm;
       })
     );
-      obj.films = charFilms;
+    obj.films = charFilms;
   }
-  
+
   charBackBtn.addEventListener("click", closeCharacterInfo);
   // Create character info table: start
   let charTable = `<table>
@@ -215,9 +208,6 @@ async function createCharacterInfo(obj) {
             <tfoot>
             
         </table>`;
-  // Create character info table: end
-  //   charTable.append(charTableBody);
-
   charInfoContainer.innerHTML = charTable;
   charInfoContainer.append(charBackBtn);
 
@@ -252,4 +242,3 @@ class Character {
     this.species = species;
   }
 }
-
