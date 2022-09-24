@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <a name="top"></a>
+    <div class="on_top_window">
+        <a href="#top"><i class="fad fa-chevron-double-up"></i></a>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul class="menu-list">
+                    <li class="menu-item"><a href="index.html">ABOUT</a></li>
+                    <li class="menu-item"><a href="#">CHARACTERS</a></li>
+                    <li class="menu-item"><a href="films.html">FILMS</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-link-mobile">
+                <div id = "burger" class="drop-down-menu-mobile-button">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <!-- main Nav bar container mobile -->
+                <div class="main-navbar-container-mobile">
+                    <nav class="main-navbar-mobile">
+                        <ul class="main-navbar-list-mobile">
+                            <li class="menu-item-mobile"><a href="index.html">ABOUT</a></li>
+                            <li class="menu-item-mobile"><a href="#">CHARACTERS</a></li>
+                            <li class="menu-item-mobile"><a href="films.html">FILMS</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main-container">
+            <section class= "content-section">
+                <div class="сharacter-container">
+                    <div class="сharacter-container-list"></div>
+                    <div class="pagination-container">
+                        <button class="pagination-button" id="firstBtn" aria-label="First page" title="First page">&lt;&lt;</button>
+                        <button class="pagination-button" id="prevBtn" aria-label="Previous page" title="Previous page">&lt;</button>
+                        <div class="pagination-numbers-container"></div>
+                        <button class="pagination-button" id="nextBtn" aria-label="Next page" title="Next page">&gt;</button>
+                        <button class="pagination-button" id="lastBtn" aria-label="Last page" title="Last page">&gt;&gt;</button>
+                    </div>
+                </div>
+                <div class="loader"></div>
+            </section>
+         </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <span>© Diachenko Yevhen 2022 | </span>
+                <span>All rights reserved</span>
+            </div>
+        </footer>
+    </div>
+    <script src="./script/effects.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

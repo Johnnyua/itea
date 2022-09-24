@@ -1,0 +1,80 @@
+.content-article {
+  margin: 0 0 35px 0;
+  min-height: 350px;
+}
+
+.content-article h3 {
+  font-family: mainFont;
+  margin: 0 0 20px 0;
+}
+
+.content-article .iframe {
+  max-width: 70%;
+  min-height: 350px;
+}
+
+.first-card {
+  background-color: #282727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+
+.first-card p {
+  font-size: 0.75em;
+  flex: 1 1 40%;
+  align-self: start;
+}
+
+.first-card .iframe {
+  border-left: 1px solid #c8c82b;
+  flex: 2 2 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .first-card {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  .content-article .iframe {
+    min-width: 100%;
+  }
+}
+
+.card-flipper {
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.card-flipper p {
+    min-height: 350px;
+}
+
+.second-card {
+  display: none;
+  transform: rotateY(180deg);
+}
+
+.card {
+  box-shadow: 5px 5px 5px rgb(70, 69, 69) inset;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.card-open {
+  transform: rotateY(180deg);
+}
+
+.card-position {
+    display: flex;
+    position: relative;    
+}
+
+
