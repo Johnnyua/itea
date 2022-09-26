@@ -11,6 +11,7 @@ const characterSection = document.querySelector(".content-section");
 const loader = document.querySelector(".loader");
 let currentPage = 1;
 let maxPage = 1;
+let coords;
 
 async function getCharacters(url = "", additionalParam = "") {
   try {
@@ -124,8 +125,10 @@ function openCharacterCard(e) {
 }
 
 async function openCharacterCard(e) {
+  const elem = e.currentTarget;
+  coords = elem.getBoundingClientRect();
   const charSection = document.querySelector(".content-section");
-  const getCharacterUrl = e.currentTarget.lastElementChild.href;
+  const getCharacterUrl = elem.lastElementChild.href;
   const charInfo = await getCharacters(getCharacterUrl);
   console.log(charInfo);
   const charInfoTable = await createCharacterInfo(charInfo);
@@ -230,6 +233,7 @@ function closeCharacterInfo(e) {
   const parentEl = e.target.parentElement;
   characterContainer.classList.remove("display-none");
   characterSection.removeChild(parentEl);
+  window.scrollTo(0, coords.top);
 }
 
 class Character {
